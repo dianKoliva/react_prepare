@@ -28,13 +28,13 @@ laboris nisi ut aliquip ex ea commodo consequat.
 
             </div>
 
-            <div className='w-1/2 '>
+            <div className='w-1/2 mt-10 ml-14'>
 
-                <div className='shadow-lg w-8/12 mt-12 '>
+                <div className='shadow-lg w-8/12 pt-4 '>
  <p className='text-center text-sky-800 font-bold pt-4 pb-2'>K-Academy</p>
 
  <div>
-     <form action="" className='ml-10'>
+     <form action="" className='ml-14'>
          <div className='text-sm'>
          Name
          <br />
