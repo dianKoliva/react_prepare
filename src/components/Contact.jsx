@@ -9,8 +9,8 @@ const Contact = () => {
 
         <div className="flex">
             <div className='w-1/2 ml-16 pt-20'>
-            <p className='font-bold'>CONTACT US</p>
-            <div className='w-8/12 '>
+            <p className='font-bold text-xl'>CONTACT US</p>
+            <div className='w-9/12 '>
             <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
