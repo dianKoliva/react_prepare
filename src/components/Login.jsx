@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { useLocation } from 'react-router'
+import { useNavigate} from 'react-router'
 const Login = () => {
-  const location=useLocation();
+  const navigate=useNavigate();
   const base="http://localhost:5040/student";
   const [email,setEmail]=useState();
   const [pass,setPass]=useState();
@@ -14,7 +14,7 @@ const Login = () => {
       password:pass
     }).then(res=>{
       if(res.data.message==="loged in"){
-        location("/in")
+        navigate("/in")
       }
       else{
 alert("unknown user")
