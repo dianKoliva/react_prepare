@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from './Head'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -27,7 +28,10 @@ choice with Koliva motors
     </p>
     <div className='flex pt-10'>
 
-    <button className='bg-sky-800 px-6 py-2 focus:outline-none text-white text-sm rounded-sm log'>Get Started</button>
+<Link to="/signup">
+<button className='bg-sky-800 px-6 py-2 focus:outline-none text-white text-sm rounded-sm log'>Get Started</button>
+</Link>
+   
     <button className='border-2 border-sky-800 text-sky-800 px-6 py-2 ml-36 focus:outline-none  text-sm rounded-sm log'>Learn More</button>
 
     </div>
