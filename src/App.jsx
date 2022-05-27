@@ -7,11 +7,17 @@ import Login from './components/Login';
 import Page from './components/Page';
 import Register from './components/Register';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'   
-
+import { useState } from "react";
+import { createContext } from 'react';
+import context from './MyContext';
 
 function App() {
+ 
+  
+  const [user, setUser] = useState("Jesse Hall");
   
   return (
+    <context.Provider value={{user,setUser}}>
     <Router>
      
     <Routes>
@@ -33,6 +39,7 @@ function App() {
         {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   </Router>
+  </context.Provider>
   )
 }
 

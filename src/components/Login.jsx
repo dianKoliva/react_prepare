@@ -1,12 +1,34 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate} from 'react-router'
+import jwt_decode from "jwt-decode";
+import context from '../MyContext';
 const Login = () => {
   const navigate=useNavigate();
   const base="http://localhost:5040/student";
   const [email,setEmail]=useState();
   const [pass,setPass]=useState();
+  const {user,setUser}=useContext(context);
+  setUser("kokok")
+  console.log(user);
+
+  const get=async()=>{
+    
+    let token=localStorage.getItem("token");
+    const config = {
+      headers:{
+        authorization:token
+      }
+    };
+    axios.get(`${base}/`,config).then(res=>
+      console.log(res))
+      .catch(err=>{
+       
+        console.log(err);
+      
+      })
+  }
 
   const login=async(email,pass)=>{
   await  axios.post(`${base}/login`,{
@@ -14,7 +36,14 @@ const Login = () => {
       password:pass
     }).then(res=>{
       if(res.data.message==="loged in"){
-        navigate("/in")
+     
+        localStorage.setItem("token", res.data.token)
+        var decoded = jwt_decode(res.data.token);
+       
+    
+    //  get();
+        
+        // navigate("/in")
       }
       else{
 alert("unknown user")
